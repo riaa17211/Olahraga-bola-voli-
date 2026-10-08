@@ -1,0 +1,478 @@
+
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Masria | Atlet Bola Voli Profesional</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        oswald: ['Oswald', 'sans-serif'],
+                        inter: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            orange: '#ff5a00',
+                            dark: '#111111',
+                            gray: '#1a1a1a',
+                            light: '#f4f4f4'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #111111;
+            color: #f4f4f4;
+        }
+        h1, h2, h3, h4, .font-heading {
+            font-family: 'Oswald', sans-serif;
+            text-transform: uppercase;
+        }
+        
+        .hero-pattern {
+            background-color: #111111;
+            background-image: radial-gradient(#ff5a00 0.5px, transparent 0.5px), radial-gradient(#ff5a00 0.5px, #111111 0.5px);
+            background-size: 20px 20px;
+            background-position: 0 0, 10px 10px;
+            background-attachment: fixed;
+        }
+        
+        .hero-overlay {
+            background: linear-gradient(to bottom, rgba(17,17,17,0.8) 0%, rgba(17,17,17,1) 100%);
+        }
+
+        .clip-path-slant {
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+        
+        .gallery-img {
+            transition: transform 0.5s ease;
+        }
+        
+        .gallery-item:hover .gallery-img {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body class="antialiased overflow-x-hidden">
+
+    <nav class="fixed w-full z-50 transition-all duration-300 bg-brand-dark/90 backdrop-blur-sm border-b border-brand-orange/20" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex-shrink-0">
+                    <a href="#" class="font-heading text-3xl font-bold tracking-wider text-white">
+                        MAS<span class="text-brand-orange">RIA</span>
+                    </a>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#beranda" class="text-white hover:text-brand-orange px-3 py-2 rounded-md text-sm font-medium transition-colors">Beranda</a>
+                        <a href="#tentang" class="text-gray-300 hover:text-brand-orange px-3 py-2 rounded-md text-sm font-medium transition-colors">Tentang</a>
+                        <a href="#prestasi" class="text-gray-300 hover:text-brand-orange px-3 py-2 rounded-md text-sm font-medium transition-colors">Prestasi</a>
+                        <a href="#galeri" class="text-gray-300 hover:text-brand-orange px-3 py-2 rounded-md text-sm font-medium transition-colors">Galeri</a>
+                        <a href="#kontak" class="bg-brand-orange text-white hover:bg-orange-700 px-6 py-2 rounded-full text-sm font-bold transition-colors">Hubungi Saya</a>
+                    </div>
+                </div>
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-300 hover:text-white focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div class="md:hidden hidden bg-brand-dark border-b border-gray-800" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#beranda" class="text-white block px-3 py-2 rounded-md text-base font-medium">Beranda</a>
+                <a href="#tentang" class="text-gray-300 block px-3 py-2 rounded-md text-base font-medium">Tentang</a>
+                <a href="#prestasi" class="text-gray-300 block px-3 py-2 rounded-md text-base font-medium">Prestasi</a>
+                <a href="#galeri" class="text-gray-300 block px-3 py-2 rounded-md text-base font-medium">Galeri</a>
+                <a href="#kontak" class="text-brand-orange block px-3 py-2 rounded-md text-base font-bold">Kontak</a>
+            </div>
+        </div>
+    </nav>
+
+    <section id="beranda" class="relative min-h-screen flex items-center justify-center hero-pattern pt-20 clip-path-slant">
+        <div class="absolute inset-0 hero-overlay"></div>
+        
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between w-full">
+            <div class="md:w-3/5 text-center md:text-left reveal active">
+                <h2 class="text-brand-orange text-xl md:text-2xl font-bold tracking-widest mb-2 font-heading">Dari Tolitoli untuk Dunia</h2>
+                <h1 class="text-6xl md:text-8xl font-black text-white leading-tight mb-6 font-heading drop-shadow-lg">
+                    THE <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-yellow-500">SPIKER</span><br>MASRIA
+                </h1>
+                <p class="text-lg md:text-xl text-gray-300 mb-10 max-w-2xl leading-relaxed">
+                    Atlet bola voli profesional. Menembus batas, mencetak sejarah, dan mendominasi lapangan internasional sebagai Juara Dunia.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                    <a href="#prestasi" class="bg-brand-orange hover:bg-orange-600 text-white font-bold py-4 px-8 rounded-full transition duration-300 text-center uppercase tracking-wider text-sm transform hover:-translate-y-1 shadow-[0_0_20px_rgba(255,90,0,0.4)]">Lihat Prestasi</a>
+                    <a href="#galeri" class="bg-transparent border-2 border-white hover:border-brand-orange hover:text-brand-orange text-white font-bold py-4 px-8 rounded-full transition duration-300 text-center uppercase tracking-wider text-sm transform hover:-translate-y-1">Aksi Lapangan</a>
+                </div>
+            </div>
+            
+            <div class="md:w-2/5 mt-16 md:mt-0 reveal active relative">
+                <div class="absolute inset-0 bg-brand-orange rounded-full blur-[100px] opacity-20"></div>
+                <!-- Placeholder for Hero Image -->
+                <img src="https://placehold.co/600x800/1a1a1a/ff5a00?text=Masria\nAction+Pose" alt="Masria Volleyball Action" class="relative z-10 w-full h-auto object-cover rounded-2xl shadow-2xl border-4 border-brand-gray transform -rotate-3 hover:rotate-0 transition duration-500">
+            </div>
+        </div>
+    </section>
+
+    <section id="tentang" class="py-24 bg-brand-dark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center gap-16">
+                <div class="md:w-1/2 reveal">
+                    <div class="relative">
+                        <div class="absolute -top-4 -left-4 w-24 h-24 bg-brand-orange rounded-tl-3xl -z-10"></div>
+                        <div class="absolute -bottom-4 -right-4 w-24 h-24 border-4 border-brand-orange rounded-br-3xl -z-10"></div>
+                        <!-- Placeholder for About Image -->
+                        <img src="https://placehold.co/600x600/1a1a1a/ffffff?text=Masria\nPortrait" alt="Masria Portrait" class="w-full rounded-lg shadow-xl relative z-10 grayscale hover:grayscale-0 transition duration-500">
+                    </div>
+                </div>
+                
+                <div class="md:w-1/2 reveal">
+                    <h2 class="text-brand-orange text-lg font-bold tracking-widest mb-2 font-heading">Tentang Saya</h2>
+                    <h3 class="text-4xl md:text-5xl font-bold text-white mb-6 font-heading">KEBANGGAAN <span class="text-brand-orange">TOLITOLI</span></h3>
+                    
+                    <div class="w-20 h-1 bg-brand-orange mb-8"></div>
+                    
+                    <p class="text-gray-300 text-lg mb-6 leading-relaxed text-justify">
+                        Lahir dan dibesarkan di pesisir indah <strong class="text-white">Tolitoli, Sulawesi Tengah</strong>, ketertarikan saya pada bola voli dimulai dari lapangan sederhana berpasir di kampung halaman. Semangat pantang menyerah dan latihan keras siang-malam telah menempa saya menjadi atlet profesional yang siap menghadapi siapa saja di lapangan.
+                    </p>
+                    <p class="text-gray-300 text-lg mb-8 leading-relaxed text-justify">
+                        Bagi saya, bola voli bukan sekadar olahraga, melainkan jalan hidup. Membawa nama Tolitoli dan Indonesia ke kancah internasional dan berdiri di podium tertinggi dunia adalah wujud terima kasih saya kepada semua yang telah mendukung perjalanan ini. Tinggi badan, lompatan vertikal, dan kekuatan spike adalah senjata utama saya.
+                    </p>
+                    
+                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-6">
+                        <div class="border-l-2 border-brand-orange pl-4">
+                            <h4 class="text-3xl font-bold text-white font-heading">195<span class="text-brand-orange text-lg">cm</span></h4>
+                            <p class="text-sm text-gray-400 uppercase tracking-wider">Tinggi Badan</p>
+                        </div>
+                        <div class="border-l-2 border-brand-orange pl-4">
+                            <h4 class="text-3xl font-bold text-white font-heading">360<span class="text-brand-orange text-lg">cm</span></h4>
+                            <p class="text-sm text-gray-400 uppercase tracking-wider">Lompatan Spike</p>
+                        </div>
+                        <div class="border-l-2 border-brand-orange pl-4">
+                            <h4 class="text-3xl font-bold text-white font-heading">O<span class="text-brand-orange text-lg">pposite</span></h4>
+                            <p class="text-sm text-gray-400 uppercase tracking-wider">Posisi</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="prestasi" class="py-24 bg-brand-gray relative">
+        <!-- Abstract Background Shape -->
+        <div class="absolute top-0 right-0 w-64 h-64 bg-brand-orange rounded-full mix-blend-multiply filter blur-[128px] opacity-20 pointer-events-none"></div>
+        <div class="absolute bottom-0 left-0 w-64 h-64 bg-yellow-500 rounded-full mix-blend-multiply filter blur-[128px] opacity-10 pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-brand-orange text-lg font-bold tracking-widest mb-2 font-heading">Rekam Jejak Emas</h2>
+                <h3 class="text-4xl md:text-6xl font-bold text-white mb-4 font-heading">SERING <span class="text-yellow-500">JUARA DUNIA</span></h3>
+                <p class="text-gray-400 max-w-2xl mx-auto">Mendominasi berbagai turnamen internasional dengan gelar juara dunia berturut-turut. Konsistensi adalah kunci kemenangan sejati.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Achievement Card 1 -->
+                <div class="bg-brand-dark p-8 rounded-2xl border border-gray-800 hover:border-yellow-500 transition duration-300 transform hover:-translate-y-2 reveal group relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-yellow-500/10 rounded-full -mr-16 -mt-16 transition-transform group-hover:scale-150"></div>
+                    <div class="text-yellow-500 text-5xl mb-6"><i class="fas fa-trophy"></i></div>
+                    <h4 class="text-2xl font-bold text-white font-heading mb-2">Juara Dunia FIVB 2024</h4>
+                    <p class="text-brand-orange text-sm font-bold tracking-widest mb-4">MEDALI EMAS</p>
+                    <p class="text-gray-400">Membawa tim meraih kemenangan absolut dengan mencetak poin penentu di set final. Diakui sebagai turnamen paling bergengsi.</p>
+                </div>
+
+                <!-- Achievement Card 2 -->
+                <div class="bg-brand-dark p-8 rounded-2xl border border-gray-800 hover:border-yellow-500 transition duration-300 transform hover:-translate-y-2 reveal group relative overflow-hidden delay-100">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-yellow-500/10 rounded-full -mr-16 -mt-16 transition-transform group-hover:scale-150"></div>
+                    <div class="text-yellow-500 text-5xl mb-6"><i class="fas fa-globe"></i></div>
+                    <h4 class="text-2xl font-bold text-white font-heading mb-2">Juara Dunia FIVB 2023</h4>
+                    <p class="text-brand-orange text-sm font-bold tracking-widest mb-4">MEDALI EMAS</p>
+                    <p class="text-gray-400">Back-to-back Champion. Dominasi penuh di panggung dunia yang mengukuhkan nama Masria sebagai hitter menakutkan.</p>
+                </div>
+
+                <!-- Achievement Card 3 -->
+                <div class="bg-brand-dark p-8 rounded-2xl border border-gray-800 hover:border-brand-orange transition duration-300 transform hover:-translate-y-2 reveal group relative overflow-hidden delay-200">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-brand-orange/10 rounded-full -mr-16 -mt-16 transition-transform group-hover:scale-150"></div>
+                    <div class="text-brand-orange text-5xl mb-6"><i class="fas fa-star"></i></div>
+                    <h4 class="text-2xl font-bold text-white font-heading mb-2">MVP Kejuaraan Dunia</h4>
+                    <p class="text-brand-orange text-sm font-bold tracking-widest mb-4">PENGHARGAAN INDIVIDU</p>
+                    <p class="text-gray-400">Dinobatkan sebagai Most Valuable Player (Pemain Terbaik) berkat statistik serangan dan blok tertinggi sepanjang turnamen.</p>
+                </div>
+
+                <!-- Achievement Card 4 -->
+                <div class="bg-brand-dark p-8 rounded-2xl border border-gray-800 hover:border-yellow-500 transition duration-300 transform hover:-translate-y-2 reveal group relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-yellow-500/10 rounded-full -mr-16 -mt-16 transition-transform group-hover:scale-150"></div>
+                    <div class="text-yellow-500 text-5xl mb-6"><i class="fas fa-medal"></i></div>
+                    <h4 class="text-2xl font-bold text-white font-heading mb-2">Emas Olimpiade 2024</h4>
+                    <p class="text-brand-orange text-sm font-bold tracking-widest mb-4">MEDALI EMAS</p>
+                    <p class="text-gray-400">Puncak prestasi olahraga dunia. Membawa pulang emas dan mengumandangkan lagu kebangsaan di panggung terbesar.</p>
+                </div>
+
+                <!-- Achievement Card 5 -->
+                <div class="bg-brand-dark p-8 rounded-2xl border border-gray-800 hover:border-brand-orange transition duration-300 transform hover:-translate-y-2 reveal group relative overflow-hidden delay-100">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-brand-orange/10 rounded-full -mr-16 -mt-16 transition-transform group-hover:scale-150"></div>
+                    <div class="text-brand-orange text-5xl mb-6"><i class="fas fa-fire"></i></div>
+                    <h4 class="text-2xl font-bold text-white font-heading mb-2">Best Spiker VNL</h4>
+                    <p class="text-brand-orange text-sm font-bold tracking-widest mb-4">Volleyball Nations League</p>
+                    <p class="text-gray-400">Mencatatkan kecepatan spike mematikan hingga 130 km/jam, dinobatkan sebagai penyerang paling efektif di liga.</p>
+                </div>
+
+                <!-- Achievement Card 6 -->
+                <div class="bg-brand-dark p-8 rounded-2xl border border-gray-800 hover:border-yellow-500 transition duration-300 transform hover:-translate-y-2 reveal group relative overflow-hidden delay-200">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-yellow-500/10 rounded-full -mr-16 -mt-16 transition-transform group-hover:scale-150"></div>
+                    <div class="text-yellow-500 text-5xl mb-6"><i class="fas fa-crown"></i></div>
+                    <h4 class="text-2xl font-bold text-white font-heading mb-2">Kejuaraan Asia 3x</h4>
+                    <p class="text-brand-orange text-sm font-bold tracking-widest mb-4">MEDALI EMAS</p>
+                    <p class="text-gray-400">Penguasa benua Asia dengan hat-trick juara bertahan. Menunjukkan supremasi yang belum tertandingi di region ini.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="galeri" class="py-24 bg-brand-dark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-12 reveal">
+                <div>
+                    <h2 class="text-brand-orange text-lg font-bold tracking-widest mb-2 font-heading">Aksi Lapangan</h2>
+                    <h3 class="text-4xl md:text-5xl font-bold text-white font-heading">GALERI <span class="text-brand-orange">MASRIA</span></h3>
+                </div>
+                <div class="mt-4 md:mt-0">
+                    <a href="https://instagram.com" target="_blank" class="text-gray-400 hover:text-white transition-colors flex items-center gap-2">
+                        <span>Lihat lebih banyak di Instagram</span>
+                        <i class="fab fa-instagram text-xl"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <!-- Gallery Item 1 -->
+                <div class="relative overflow-hidden rounded-lg aspect-[4/5] gallery-item reveal">
+                    <img src="https://placehold.co/800x1000/1a1a1a/ff5a00?text=Lompatan+Spike" alt="Lompatan Spike" class="w-full h-full object-cover gallery-img">
+                    <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-transparent to-transparent opacity-0 gallery-overlay transition-opacity duration-300 flex flex-col justify-end p-6">
+                        <span class="text-brand-orange font-bold font-heading tracking-wider">01</span>
+                        <h4 class="text-white text-2xl font-heading">Lompatan Maut</h4>
+                        <p class="text-gray-300 text-sm">Final Kejuaraan Dunia 2024</p>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 2 -->
+                <div class="relative overflow-hidden rounded-lg aspect-[4/5] gallery-item reveal delay-100">
+                    <img src="https://placehold.co/800x1000/222222/eab308?text=Angkat+Trofi" alt="Angkat Trofi" class="w-full h-full object-cover gallery-img">
+                    <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-transparent to-transparent opacity-0 gallery-overlay transition-opacity duration-300 flex flex-col justify-end p-6">
+                        <span class="text-yellow-500 font-bold font-heading tracking-wider">02</span>
+                        <h4 class="text-white text-2xl font-heading">Momen Juara</h4>
+                        <p class="text-gray-300 text-sm">Penyerahan Medali Emas</p>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 3 -->
+                <div class="relative overflow-hidden rounded-lg aspect-[4/5] gallery-item reveal delay-200">
+                    <img src="https://placehold.co/800x1000/1a1a1a/ffffff?text=Fokus+Serve" alt="Fokus Serve" class="w-full h-full object-cover gallery-img">
+                    <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-transparent to-transparent opacity-0 gallery-overlay transition-opacity duration-300 flex flex-col justify-end p-6">
+                        <span class="text-brand-orange font-bold font-heading tracking-wider">03</span>
+                        <h4 class="text-white text-2xl font-heading">Fokus Penuh</h4>
+                        <p class="text-gray-300 text-sm">Persiapan Jump Serve</p>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 4 -->
+                <div class="relative overflow-hidden rounded-lg aspect-[4/5] gallery-item reveal md:col-span-2 lg:col-span-2">
+                    <img src="https://placehold.co/1600x1000/1a1a1a/ff5a00?text=Selebrasi+Tim" alt="Selebrasi Tim" class="w-full h-full object-cover gallery-img">
+                    <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-transparent to-transparent opacity-0 gallery-overlay transition-opacity duration-300 flex flex-col justify-end p-6">
+                        <span class="text-brand-orange font-bold font-heading tracking-wider">04</span>
+                        <h4 class="text-white text-2xl font-heading">Solidaritas Tim</h4>
+                        <p class="text-gray-300 text-sm">Kemenangan adalah hasil kerja keras bersama</p>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 5 -->
+                <div class="relative overflow-hidden rounded-lg aspect-[4/5] gallery-item reveal delay-100">
+                    <img src="https://placehold.co/800x1000/222222/ffffff?text=Latihan+Keras" alt="Latihan" class="w-full h-full object-cover gallery-img">
+                    <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-transparent to-transparent opacity-0 gallery-overlay transition-opacity duration-300 flex flex-col justify-end p-6">
+                        <span class="text-brand-orange font-bold font-heading tracking-wider">05</span>
+                        <h4 class="text-white text-2xl font-heading">Dedikasi</h4>
+                        <p class="text-gray-300 text-sm">Sesi latihan beban rutin</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="kontak" class="py-24 bg-brand-gray relative border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-brand-dark rounded-3xl p-8 md:p-16 border border-gray-800 shadow-2xl relative overflow-hidden reveal">
+                <!-- Decorative background elements -->
+                <div class="absolute -top-24 -right-24 w-64 h-64 border-[30px] border-gray-800 rounded-full opacity-50"></div>
+                <div class="absolute -bottom-24 -left-24 w-64 h-64 border-[30px] border-brand-orange rounded-full opacity-10"></div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 relative z-10">
+                    <div>
+                        <h2 class="text-brand-orange text-lg font-bold tracking-widest mb-2 font-heading">Kerja Sama & Sponsor</h2>
+                        <h3 class="text-4xl md:text-5xl font-bold text-white mb-6 font-heading">MARI <span class="text-brand-orange">TERHUBUNG</span></h3>
+                        <p class="text-gray-400 mb-8 text-lg">
+                            Tertarik untuk kerja sama brand, sponsor, atau mengundang saya sebagai pembicara/tamu? Silakan tinggalkan pesan melalui formulir atau kontak langsung manajemen saya.
+                        </p>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center text-brand-orange text-xl">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <p class="text-sm text-gray-500 uppercase tracking-wider">Email Manajemen</p>
+                                    <p class="text-white font-medium">management@masriavolley.com</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center text-brand-orange text-xl">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div>
+                                    <p class="text-sm text-gray-500 uppercase tracking-wider">Basecamp</p>
+                                    <p class="text-white font-medium">Tolitoli, Sulawesi Tengah, Indonesia</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-10 flex gap-4">
+                            <a href="#" class="w-10 h-10 bg-gray-800 hover:bg-brand-orange rounded-full flex items-center justify-center text-white transition-colors"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="w-10 h-10 bg-gray-800 hover:bg-brand-orange rounded-full flex items-center justify-center text-white transition-colors"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="w-10 h-10 bg-gray-800 hover:bg-brand-orange rounded-full flex items-center justify-center text-white transition-colors"><i class="fab fa-youtube"></i></a>
+                            <a href="#" class="w-10 h-10 bg-gray-800 hover:bg-brand-orange rounded-full flex items-center justify-center text-white transition-colors"><i class="fab fa-tiktok"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-900 p-8 rounded-2xl border border-gray-800">
+                        <form onsubmit="handleForm(event)">
+                            <div class="space-y-6">
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-400 mb-2">Nama Lengkap</label>
+                                    <input type="text" required class="w-full bg-brand-dark border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-brand-orange focus:ring-1 focus:ring-brand-orange transition-colors" placeholder="Masukkan nama Anda">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-400 mb-2">Email</label>
+                                    <input type="email" required class="w-full bg-brand-dark border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-brand-orange focus:ring-1 focus:ring-brand-orange transition-colors" placeholder="nama@email.com">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-400 mb-2">Pesan</label>
+                                    <textarea required rows="4" class="w-full bg-brand-dark border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-brand-orange focus:ring-1 focus:ring-brand-orange transition-colors" placeholder="Tuliskan pesan Anda di sini..."></textarea>
+                                </div>
+                                <button type="submit" class="w-full bg-brand-orange hover:bg-orange-600 text-white font-bold py-4 rounded-lg transition duration-300 uppercase tracking-wider text-sm flex items-center justify-center gap-2">
+                                    <span>Kirim Pesan</span>
+                                    <i class="fas fa-paper-plane"></i>
+                                </button>
+                                <!-- Custom Message Box Container (Replaces Alert) -->
+                                <div id="form-message" class="hidden mt-4 p-4 bg-green-900/50 border border-green-500 text-green-200 rounded-lg text-center text-sm">
+                                    Pesan berhasil dikirim! Tim kami akan segera menghubungi Anda.
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#0a0a0a] py-8 border-t border-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between">
+            <p class="text-gray-500 text-sm text-center md:text-left mb-4 md:mb-0">
+                &copy; 2026 Masria Volleyball. All rights reserved. Bangga menjadi bagian dari Tolitoli.
+            </p>
+            <div class="flex items-center gap-2">
+                <span class="text-white font-heading text-xl font-bold">MAS<span class="text-brand-orange">RIA</span></span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Form Handling to avoid alert()
+        function handleForm(e) {
+            e.preventDefault();
+            const msgBox = document.getElementById('form-message');
+            msgBox.classList.remove('hidden');
+            e.target.reset();
+            setTimeout(() => {
+                msgBox.classList.add('hidden');
+            }, 5000);
+        }
+
+        // Mobile Menu Toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when clicking a link
+        const mobileLinks = menu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+
+        // Navbar Scroll Effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('shadow-lg');
+                navbar.style.backgroundColor = 'rgba(17, 17, 17, 0.95)';
+            } else {
+                navbar.classList.remove('shadow-lg');
+                navbar.style.backgroundColor = 'rgba(17, 17, 17, 0.9)';
+            }
+        });
+
+        // Scroll Reveal Animation
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 100;
+                
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+        
+        window.addEventListener("scroll", reveal);
+       // Trigger once on load
+        reveal();
+    </script>
+</body>
+</html>
